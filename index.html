@@ -1,38 +1,39 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestão de Placas</title>
+    <title>Site de Monitoramento</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div class="container">
-        <!-- Área de Localização de Placas -->
-        <div class="left-panel">
+        <div class="left-side">
             <h2>Buscar Placa</h2>
-            <input type="text" id="placa-input" placeholder="Digite a placa...">
-            <button id="buscar-placa">Buscar</button>
-            <div id="resultado">
-                <!-- Resultado da busca de placas -->
+            <input type="text" id="placaBusca" placeholder="Digite a placa">
+            <button onclick="buscarPlaca()">Buscar</button>
+            <div id="resultadoPlaca">
+                <p><strong>Placa:</strong> <span id="placaInfo"></span></p>
+                <p><strong>Cliente:</strong> <span id="clienteInfo"></span></p>
+                <p><strong>Plataforma:</strong> <span id="plataformaInfo"></span></p>
+                <p><strong>Tratativa:</strong> <span id="tratativaInfo"></span></p>
             </div>
         </div>
 
-        <!-- Área do Em andamento -->
-        <div class="center-panel">
+        <div class="center-side">
             <h2>Em Andamento</h2>
-            <textarea id="em-andamento" placeholder="Digite informações sobre o andamento..."></textarea>
+            <textarea id="emAndamento" placeholder="Digite o status aqui..."></textarea>
         </div>
 
-        <!-- Quadro de Avisos -->
-        <div class="right-panel">
+        <div class="right-side">
             <h2>Quadro de Avisos</h2>
-            <div class="avisos">
-                <!-- Avisos serão adicionados aqui -->
+            <div id="quadroAvisos">
+                <div class="aviso">
+                    <p>Exemplo de aviso. Clique para remover.</p>
+                </div>
             </div>
-            <input type="text" id="aviso-input" placeholder="Digite um aviso...">
-            <button id="adicionar-aviso">Adicionar Aviso</button>
+            <input type="text" id="novoAviso" placeholder="Digite o novo aviso">
+            <button onclick="adicionarAviso()">Adicionar Aviso</button>
         </div>
     </div>
 
