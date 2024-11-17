@@ -1,133 +1,81 @@
-
+/* Resetando estilos padrões */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Corpo da página */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-}
-
-.container {
-    display: flex;
-    justify-content: space-between;
+    background-color: #f4f4f4;
     padding: 20px;
-    gap: 20px;
 }
 
-.busca, .andamento, .avisos {
-    width: 30%;
-    background-color: #fff;
+/* Estilos do Quadro de Avisos */
+.quadro-aviso {
+    background-color: #ffffff;
+    border: 2px solid #4CAF50;
     border-radius: 8px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
     padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
-    margin-bottom: 15px;
-    font-size: 1.2em;
+.quadro-aviso h2 {
+    text-align: center;
     color: #333;
+    margin-bottom: 20px;
 }
 
-input[type="text"], textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 1em;
-}
-
-textarea {
-    resize: vertical;
-    height: 150px;
-}
-
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-#resultado {
-    margin-top: 20px;
-}
-
-#quadroAvisos {
-    margin-top: 20px;
-    background-color: #fafafa;
-    padding: 15px;
-    border: 1px dashed #ccc;
-    border-radius: 5px;
-    min-height: 100px;
-    max-height: 200px;
-    overflow-y: auto;
-}
-
-.avisos div {
-    background-color: #e0e0e0;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    padding: 10px;
+/* Estilo da área de avisos */
+.avisos {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.avisos .aviso {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.avisos .aviso:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para o campo de input e botão */
+#aviso-input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#adicionar-aviso {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.avisos div:hover {
-    background-color: #d1d1d1;
-}
-
-button.remove {
-    background-color: #dc3545;
-    width: auto;
-    padding: 5px 10px;
-    font-size: 12px;
-    margin-left: 10px;
-}
-
-button.remove:hover {
-    background-color: #c82333;
-}
-
-button.add {
-    width: auto;
-    padding: 5px 10px;
-    font-size: 12px;
-    background-color: #28a745;
-    border: none;
-    color: white;
-    border-radius: 5px;
-}
-
-button.add:hover {
-    background-color: #218838;
-}
-
-.avisos div .remove {
-    cursor: pointer;
-    font-size: 0.9em;
-    border: none;
-    padding: 5px;
-    background-color: transparent;
-    color: #c82333;
-    text-align: center;
-}
-
-.avisos div .remove:hover {
-    background-color: #f8d7da;
-    color: #721c24;
+#adicionar-aviso:hover {
+    background-color: #45a049;
 }
