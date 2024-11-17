@@ -1,35 +1,21 @@
-
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Placas e Quadro de Avisos</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Quadro de Avisos</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Seção de Busca de Placa -->
-        <div class="busca">
-            <h2>Consulta de Placa</h2>
-            <input type="text" id="placaInput" placeholder="Digite a placa" />
-            <button onclick="buscarPlaca()">Buscar</button>
-            <div id="resultado"></div>
-        </div>
 
-        <!-- Seção de Em Andamento -->
-        <div class="andamento">
-            <h2>Em Andamento</h2>
-            <textarea id="andamentoInput" placeholder="Digite o que está em andamento..."></textarea>
-        </div>
-
-        <!-- Seção de Quadro de Avisos -->
+    <!-- Área do Quadro de Avisos -->
+    <div class="quadro-aviso">
+        <h2>Quadro de Avisos</h2>
         <div class="avisos">
-            <h2>Quadro de Avisos</h2>
-            <input type="text" id="avisoInput" placeholder="Digite o aviso" />
-            <button onclick="adicionarAviso()">Adicionar Aviso</button>
-            <div id="quadroAvisos"></div>
+            <!-- Avisos serão adicionados aqui -->
         </div>
+        <input type="text" id="aviso-input" placeholder="Digite um aviso...">
+        <button id="adicionar-aviso">Adicionar Aviso</button>
     </div>
 
     <script src="script.js"></script>
