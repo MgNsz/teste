@@ -1,63 +1,24 @@
+// Selecionando os elementos
+const avisoInput = document.getElementById('aviso-input');
+const adicionarAvisoBtn = document.getElementById('adicionar-aviso');
+const avisosContainer = document.querySelector('.avisos');
 
-let placas = {
-    "BOI2416": {
-        cliente: "TATIANA DA SILVA PINTO",
-        plataforma: "LocalGPS",
-        empresa: "GPS TRAINING"
-    },
-    "OTO6541": {
-        cliente: "MASTER EXPRESS E PRESTADORA DE SERVICOS LTDA",
-        plataforma: "LocalGPS",
-        empresa: "LocalGPS"
-    },
-    "OTO6461": {
-        cliente: "MASTER EXPRESS E PRESTADORA DE SERVICOS LTDA",
-        plataforma: "LocalGPS",
-        empresa: "LocalGPS"
-    },
-    // ... (Adicionar as outras placas conforme seu banco de dados)
-};
+// Função para adicionar o aviso ao quadro
+adicionarAvisoBtn.addEventListener('click', () => {
+    const avisoTexto = avisoInput.value.trim();
 
-function buscarPlaca() {
-    const input = document.getElementById("placaInput").value.toUpperCase();
-    const resultadoDiv = document.getElementById("resultado");
+    // Verifica se o campo não está vazio
+    if (avisoTexto) {
+        const novoAviso = document.createElement('div');
+        novoAviso.classList.add('aviso');
+        novoAviso.textContent = avisoTexto;
 
-    if (placas[input]) {
-        const { cliente, plataforma, empresa } = placas[input];
-        resultadoDiv.innerHTML = `
-            <div><strong>Placa:</strong> ${input}</div>
-            <div><strong>Cliente:</strong> ${cliente}</div>
-            <div><strong>Plataforma:</strong> ${plataforma}</div>
-            <div><strong>Empresa / Franqueado:</strong> ${empresa}</div>
-        `;
+        // Adiciona o aviso ao container de avisos
+        avisosContainer.appendChild(novoAviso);
+
+        // Limpa o campo de input após adicionar o aviso
+        avisoInput.value = '';
     } else {
-        resultadoDiv.innerHTML = "<div class='red'>Placa não encontrada.</div>";
+        alert('Por favor, digite um aviso!');
     }
-}
-
-function adicionarAviso() {
-    const avisoInput = document.getElementById("avisoInput").value.trim();
-    const quadroAvisos = document.getElementById("quadroAvisos");
-
-    if (avisoInput !== "") {
-        const avisoDiv = document.createElement("div");
-        avisoDiv.textContent = avisoInput;
-
-        const removeButton = document.createElement("button");
-        removeButton.textContent = "Remover";
-        removeButton.classList.add("remove");
-        removeButton.onclick = function() {
-            removerAviso(avisoDiv);
-        };
-
-        avisoDiv.appendChild(removeButton);
-        quadroAvisos.appendChild(avisoDiv);
-        document.getElementById("avisoInput").value = "";
-    } else {
-        alert("Digite um aviso para adicionar.");
-    }
-}
-
-function removerAviso(avisoDiv) {
-    avisoDiv.remove();
-}
+});
