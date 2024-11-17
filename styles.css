@@ -12,29 +12,95 @@ body {
     padding: 20px;
 }
 
-/* Estilos do Quadro de Avisos */
-.quadro-aviso {
-    background-color: #ffffff;
-    border: 2px solid #4CAF50;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
+/* Layout do container */
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Área da esquerda - Busca por placa */
+.left-panel {
+    width: 30%;
+    background-color: #fff;
     padding: 20px;
+    border-radius: 8px;
+    border: 2px solid #4CAF50;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.quadro-aviso h2 {
-    text-align: center;
-    color: #333;
+.left-panel h2 {
     margin-bottom: 20px;
 }
 
-/* Estilo da área de avisos */
+#placa-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#buscar-placa {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#buscar-placa:hover {
+    background-color: #45a049;
+}
+
+#resultado {
+    margin-top: 20px;
+}
+
+/* Área central - Em andamento */
+.center-panel {
+    width: 35%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid #4CAF50;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#em-andamento {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+}
+
+/* Área direita - Quadro de Avisos */
+.right-panel {
+    width: 30%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid #4CAF50;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.right-panel h2 {
+    margin-bottom: 20px;
+}
+
 .avisos {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     margin-bottom: 20px;
 }
 
@@ -46,7 +112,6 @@ body {
     font-size: 16px;
     color: #333;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .avisos .aviso:hover {
@@ -54,7 +119,6 @@ body {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilo para o campo de input e botão */
 #aviso-input {
     width: calc(100% - 20px);
     padding: 10px;
