@@ -3,19 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quadro de Avisos</title>
+    <title>Gestão de Placas</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Área do Quadro de Avisos -->
-    <div class="quadro-aviso">
-        <h2>Quadro de Avisos</h2>
-        <div class="avisos">
-            <!-- Avisos serão adicionados aqui -->
+    <div class="container">
+        <!-- Área de Localização de Placas -->
+        <div class="left-panel">
+            <h2>Buscar Placa</h2>
+            <input type="text" id="placa-input" placeholder="Digite a placa...">
+            <button id="buscar-placa">Buscar</button>
+            <div id="resultado">
+                <!-- Resultado da busca de placas -->
+            </div>
         </div>
-        <input type="text" id="aviso-input" placeholder="Digite um aviso...">
-        <button id="adicionar-aviso">Adicionar Aviso</button>
+
+        <!-- Área do Em andamento -->
+        <div class="center-panel">
+            <h2>Em Andamento</h2>
+            <textarea id="em-andamento" placeholder="Digite informações sobre o andamento..."></textarea>
+        </div>
+
+        <!-- Quadro de Avisos -->
+        <div class="right-panel">
+            <h2>Quadro de Avisos</h2>
+            <div class="avisos">
+                <!-- Avisos serão adicionados aqui -->
+            </div>
+            <input type="text" id="aviso-input" placeholder="Digite um aviso...">
+            <button id="adicionar-aviso">Adicionar Aviso</button>
+        </div>
     </div>
 
     <script src="script.js"></script>
